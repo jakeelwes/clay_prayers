@@ -22,7 +22,7 @@ docker run -it -p 12345:12345 rollasoul/clay_phil
 python clay-run.py
 ```
 
-# raspberry pi setup:
+# local setup:
 
 Git clone the repository to get all the files.
 

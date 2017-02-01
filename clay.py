@@ -1,6 +1,6 @@
-# This is the server script that runs on the docker image. 
+# This is the server script that runs on the docker image.
 # You don't need to execute it, but you can modify it easier this way.
-# Still don't forget after modifying this script to upload it to the server and commit to the docker image. 
+# Still don't forget after modifying this script to upload it to the server and commit to the docker image.
 
 import subprocess
 import socket
@@ -49,7 +49,7 @@ while True:
       # receive and write image
    l = c.recv(4096)
    try:
-   	while (l): 
+   	while (l):
       		f.write(l)
       		l = c.recv(4096)
    except socket.error:
@@ -142,7 +142,7 @@ while len(check_noun) != len(set(check_noun)):
         		if tagged1[i][1] == 'NN':
                 		check_noun.append(tagged1[i])
         		if tagged1[i][1] == 'NNS':
-                		check_noun.append(tagged1[i])       
+                		check_noun.append(tagged1[i])
         		if tagged1[i][1] == 'VBG':
                 		check_verb.append(tagged1[i])
         		if tagged1[i][1] == 'VBZ':
@@ -153,12 +153,12 @@ while len(check_noun) != len(set(check_noun)):
         		if tagged2[i][1] == 'NN':
                 		check_noun.append(tagged2[i])
         		if tagged2[i][1] == 'NNS':
-                		check_noun.append(tagged2[i])        
+                		check_noun.append(tagged2[i])
         		if tagged2[i][1] == 'VBG':
                 		check_verb.append(tagged1[i])
         		if tagged2[i][1] == 'VBZ':
                 		check_verb.append(tagged1[i])
-	
+
     		for i in range(0,len(words3)):
         		# find nouns and verbs in line3 and store them
         		if tagged3[i][1] == 'NN':
@@ -171,8 +171,8 @@ while len(check_noun) != len(set(check_noun)):
                 		check_verb.append(tagged1[i])
     except IndexError:
 	pass
-		
-    # check for existing lines with verbs 
+
+    # check for existing lines with verbs
     if not check_verb:
         check_noun = ['noun', 'noun', 'noun']
 
@@ -228,9 +228,9 @@ quote = open("quote.txt", "w")
 quote.write("%s." % sen)
 quote.close()
 # send quote back to client
-s.listen(5)                
+s.listen(5)
 print 'listening on port 12345'
-c, addr = s.accept()    
+c, addr = s.accept()
 print 'Got connection from', addr
 print "quote generated: %s" %(sen)
 f=open ("/root/torch-rnn/quote.txt", "rb")
